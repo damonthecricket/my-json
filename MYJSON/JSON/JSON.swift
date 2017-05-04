@@ -153,9 +153,6 @@ extension MYJSON: Equatable {
     }
 }
 
-// MARK: - MYJSON
-
-
 // MARK: - Deserialization
 
 public extension JSONSerialization {
