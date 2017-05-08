@@ -8,3 +8,6 @@
 
 import Foundation
 
+// MARK: - Operators
+
+infix operator <-

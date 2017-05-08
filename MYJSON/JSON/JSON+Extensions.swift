@@ -29,29 +29,37 @@ public extension Dictionary where Key: ExpressibleByStringLiteral, Value: Any {
     // MARK: - JSON
     
     public func json(forKey key: Key) -> MYJSON? {
-        guard isJSON(forKey: key) else {return nil}
+        guard isJSON(forKey: key) else {
+            return nil
+        }
         return self[key] as! MYJSON?
     }
     
     public func jsonArray(forKey key: Key) -> [MYJSON]? {
-        guard isJSONArray(forKey: key) else {return nil}
+        guard isJSONArray(forKey: key) else {
+            return nil
+        }
         return self[key] as! [MYJSON]?
     }
     
     // MARK: - Number
     
     public func number(forKey key: Key) -> NSNumber? {
-        guard isValue(forKey: key) else {return nil}
-        guard let number = self[key] as? NSNumber? else {return nil}
-        
+        guard isValue(forKey: key) else {
+            return nil
+        }
+        guard let number = self[key] as? NSNumber? else {
+            return nil
+        }
         return number
     }
     
     // MARK: - String
     
     public func string(forKey key: Key) -> String? {
-        guard isValue(forKey: key), let str = self[key] as? String? else {return nil}
-        
+        guard isValue(forKey: key), let str = self[key] as? String? else {
+            return nil
+        }
         return str
     }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		91044C3D1EBB9572009824AD /* MYJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91044C331EBB9572009824AD /* MYJSON.framework */; };
-		91044C421EBB9572009824AD /* MYJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C411EBB9572009824AD /* MYJSONTests.swift */; };
 		91044C441EBB9572009824AD /* MYJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 91044C361EBB9572009824AD /* MYJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91044C4F1EBB9598009824AD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91044C4E1EBB9598009824AD /* Info.plist */; };
 		91044C561EBB968D009824AD /* JSON+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C511EBB968D009824AD /* JSON+Extensions.swift */; };
@@ -16,6 +15,10 @@
 		91044C581EBB968D009824AD /* JSONDeserialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C531EBB968D009824AD /* JSONDeserialization.swift */; };
 		91044C591EBB968D009824AD /* JSONOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C541EBB968D009824AD /* JSONOperators.swift */; };
 		91044C5A1EBB968D009824AD /* JSONSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C551EBB968D009824AD /* JSONSerialization.swift */; };
+		91044C661EBCCE21009824AD /* MYJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C651EBCCE21009824AD /* MYJSONTests.swift */; };
+		91044C6A1EBCCF16009824AD /* MYJSONDeserizlizableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C691EBCCF16009824AD /* MYJSONDeserizlizableTest.swift */; };
+		91044C6E1EBD534F009824AD /* TestJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C6D1EBD534F009824AD /* TestJSON.swift */; };
+		91044C701EBD55DD009824AD /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C6F1EBD55DD009824AD /* TestClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +35,6 @@
 		91044C331EBB9572009824AD /* MYJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MYJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91044C361EBB9572009824AD /* MYJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYJSON.h; sourceTree = "<group>"; };
 		91044C3C1EBB9572009824AD /* MYJSONTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MYJSONTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		91044C411EBB9572009824AD /* MYJSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYJSONTests.swift; sourceTree = "<group>"; };
 		91044C431EBB9572009824AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91044C4E1EBB9598009824AD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91044C511EBB968D009824AD /* JSON+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON+Extensions.swift"; sourceTree = "<group>"; };
@@ -40,6 +42,10 @@
 		91044C531EBB968D009824AD /* JSONDeserialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserialization.swift; sourceTree = "<group>"; };
 		91044C541EBB968D009824AD /* JSONOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONOperators.swift; sourceTree = "<group>"; };
 		91044C551EBB968D009824AD /* JSONSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerialization.swift; sourceTree = "<group>"; };
+		91044C651EBCCE21009824AD /* MYJSONTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYJSONTests.swift; sourceTree = "<group>"; };
+		91044C691EBCCF16009824AD /* MYJSONDeserizlizableTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYJSONDeserizlizableTest.swift; sourceTree = "<group>"; };
+		91044C6D1EBD534F009824AD /* TestJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestJSON.swift; sourceTree = "<group>"; };
+		91044C6F1EBD55DD009824AD /* TestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +98,10 @@
 		91044C401EBB9572009824AD /* MYJSONTests */ = {
 			isa = PBXGroup;
 			children = (
-				91044C411EBB9572009824AD /* MYJSONTests.swift */,
+				91044C651EBCCE21009824AD /* MYJSONTests.swift */,
+				91044C691EBCCF16009824AD /* MYJSONDeserizlizableTest.swift */,
+				91044C6F1EBD55DD009824AD /* TestClass.swift */,
+				91044C6D1EBD534F009824AD /* TestJSON.swift */,
 				91044C431EBB9572009824AD /* Info.plist */,
 			);
 			path = MYJSONTests;
@@ -110,9 +119,9 @@
 			isa = PBXGroup;
 			children = (
 				91044C521EBB968D009824AD /* JSON.swift */,
+				91044C541EBB968D009824AD /* JSONOperators.swift */,
 				91044C531EBB968D009824AD /* JSONDeserialization.swift */,
 				91044C551EBB968D009824AD /* JSONSerialization.swift */,
-				91044C541EBB968D009824AD /* JSONOperators.swift */,
 				91044C511EBB968D009824AD /* JSON+Extensions.swift */,
 			);
 			path = JSON;
@@ -243,7 +252,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91044C421EBB9572009824AD /* MYJSONTests.swift in Sources */,
+				91044C701EBD55DD009824AD /* TestClass.swift in Sources */,
+				91044C6A1EBCCF16009824AD /* MYJSONDeserizlizableTest.swift in Sources */,
+				91044C661EBCCE21009824AD /* MYJSONTests.swift in Sources */,
+				91044C6E1EBD534F009824AD /* TestJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

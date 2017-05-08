@@ -20,7 +20,7 @@ public typealias MYJSONValue = Any
 
 // MARK: - MYJSON
 
-public let MYEmptyJSON: MYJSON = .value(["Empty": "JSON"])
+public let MYEmptyJSON: MYJSONType = [:] as MYJSONType
 
 public enum MYJSON: RawRepresentable {
     
@@ -29,7 +29,7 @@ public enum MYJSON: RawRepresentable {
     case value(MYJSONType)
     
     case array(MYJSONArrayType)
-    
+
     // MARK: - Object LifeCycle
 
     public init(withMutableContainersJSONData data: Data) throws {
@@ -51,7 +51,7 @@ public enum MYJSON: RawRepresentable {
     }
     
     public init() {
-        self = MYEmptyJSON
+        self.init(rawValue: MYEmptyJSON)
     }
     
     public init(rawValue: Any) {
@@ -61,16 +61,8 @@ public enum MYJSON: RawRepresentable {
         case is MYJSONArrayType:
             self = .array(rawValue as! MYJSONArrayType)
         default:
-            self = MYEmptyJSON
+            self = .value(MYEmptyJSON)
         }
-    }
-    
-    public init(value: MYJSONType) {
-        self = .value(value)
-    }
-    
-    public init(array: MYJSONArrayType) {
-        self = .array(array)
     }
 
     // MARK: - RawRepresentable
@@ -93,10 +85,20 @@ public enum MYJSON: RawRepresentable {
         return nil
     }
     
+    // MARK: - Data
+    
+    public func prettyPrintedData() throws -> Data {
+        return try data(options: [JSONSerialization.WritingOptions.prettyPrinted])
+    }
+    
+    public func data(options opt: JSONSerialization.WritingOptions = []) throws -> Data {
+        return try JSONSerialization.data(withJSON: self, options: opt)
+    }
+    
     // MARK: - Is
     
     public var isEmpty: Bool {
-        return isValue && self == MYEmptyJSON
+        return isValue && value! == MYEmptyJSON
     }
     
     public var isValue: Bool {
@@ -150,26 +152,5 @@ extension MYJSON: Equatable {
             return lhs.array! == rhs.array!
         }
         return false
-    }
-}
-
-// MARK: - Deserialization
-
-public extension JSONSerialization {
-    
-    public class func mutableContainersJSON(with data: Data) throws -> MYJSON {
-        return try MYJSON(withMutableContainersJSONData: data)
-    }
-    
-    public class func mutableLeavesJSON(with data: Data) throws -> MYJSON {
-        return try MYJSON(withMutableLeavesJSONData: data)
-    }
-    
-    public class func allowFragmentsJSON(with data: Data) throws -> MYJSON {
-        return try MYJSON(withAllowFragmentsJSONData: data)
-    }
-    
-    public class func json(with data: Data, options opt: JSONSerialization.ReadingOptions = []) throws -> MYJSON {
-        return try MYJSON(with: data, options: opt)
     }
 }

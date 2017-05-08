@@ -14,10 +14,6 @@ public protocol MYJSONDeserizlizable {
     init(json: MYJSON)
 }
 
-// MARK: - Operators
-
-infix operator <-
-
 // MARK: - Assignment
 
 public func <- <T>(lft: inout T?, rgt: Any?) {
@@ -41,6 +37,7 @@ public func <- <T: MYJSONDeserizlizable>(lhs: T.Type, rhs: Any?) -> T {
     
     switch right {
     case is MYJSON:
+        
         return lhs.init(json: right as! MYJSON)
     case is T:
         return right as! T
@@ -53,7 +50,7 @@ public func <- <T: MYJSONDeserizlizable>(lhs: T.Type, rhs: Any?) -> [T] {
     var models: [T] = []
     
     guard let right = rhs else {
-        return []
+        return models
     }
 
     switch right {
@@ -88,12 +85,11 @@ public func <- <T: MYJSONDeserizlizable>(lhs: T.Type, rhs: MYJSONArrayType) -> [
         let model: T = lhs <- json
         array.append(model)
     }
-    
     return array
 }
 
 public func <- <T: MYJSONDeserizlizable>(lhs: T.Type, rhs: MYJSONType) -> T {
-    return T(json: MYJSON(value: rhs))
+    return T(json: MYJSON(rawValue: rhs))
 }
 
 // MARK: - Enum
@@ -133,4 +129,24 @@ public func Transform<T>(model: T?, data: Any?) -> T? {
     }
     
     return data as! T?
+}
+
+// MARK: - Dserialization
+
+public extension JSONSerialization {
+    public class func mutableContainersJSON(with data: Data) throws -> MYJSON {
+        return try MYJSON(withMutableContainersJSONData: data)
+    }
+    
+    public class func mutableLeavesJSON(with data: Data) throws -> MYJSON {
+        return try MYJSON(withMutableLeavesJSONData: data)
+    }
+    
+    public class func allowFragmentsJSON(with data: Data) throws -> MYJSON {
+        return try MYJSON(withAllowFragmentsJSONData: data)
+    }
+    
+    public class func json(with data: Data, options opt: JSONSerialization.ReadingOptions = []) throws -> MYJSON {
+        return try MYJSON(with: data, options: opt)
+    }
 }
