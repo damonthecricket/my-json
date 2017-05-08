@@ -12,12 +12,6 @@ public protocol MYJSONSerizlizable {
     var json: MYJSON {get}
 }
 
-// MARK: - Operators
-
-public func <- (lhs: inout MYJSON, rhs: MYJSONSerizlizable) {
-    lhs = rhs.json
-}
-
 // MARK: - Serialization
 
 public extension JSONSerialization {

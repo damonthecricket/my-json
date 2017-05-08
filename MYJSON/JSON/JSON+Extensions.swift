@@ -62,6 +62,15 @@ public extension Dictionary where Key: ExpressibleByStringLiteral, Value: Any {
         }
         return str
     }
+    
+    // MARK: - Array
+    
+    public func array<T>(forKey key: Key) -> [T] {
+        guard isValue(forKey: key), let array = self[key] as? [T] else {
+            return []
+        }
+        return array
+    }
 }
 
 // MARK: - JSON Equality

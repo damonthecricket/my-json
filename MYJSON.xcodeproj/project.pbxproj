@@ -20,6 +20,7 @@
 		91044C751EC0A07A009824AD /* TestJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C731EC0A07A009824AD /* TestJSON.swift */; };
 		91044C771EC0A0A3009824AD /* AccountTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C761EC0A0A3009824AD /* AccountTestClass.swift */; };
 		91044C791EC0A0B5009824AD /* FriendTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C781EC0A0B5009824AD /* FriendTestClass.swift */; };
+		91044C7F1EC11112009824AD /* MYJSONSerizlizableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C7E1EC11112009824AD /* MYJSONSerizlizableTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		91044C731EC0A07A009824AD /* TestJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestJSON.swift; sourceTree = "<group>"; };
 		91044C761EC0A0A3009824AD /* AccountTestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTestClass.swift; sourceTree = "<group>"; };
 		91044C781EC0A0B5009824AD /* FriendTestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTestClass.swift; sourceTree = "<group>"; };
+		91044C7E1EC11112009824AD /* MYJSONSerizlizableTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYJSONSerizlizableTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				91044C651EBCCE21009824AD /* MYJSONTests.swift */,
 				91044C691EBCCF16009824AD /* MYJSONDeserizlizableTest.swift */,
+				91044C7E1EC11112009824AD /* MYJSONSerizlizableTest.swift */,
 				91044C711EC0A07A009824AD /* TestData */,
 				91044C431EBB9572009824AD /* Info.plist */,
 			);
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91044C791EC0A0B5009824AD /* FriendTestClass.swift in Sources */,
+				91044C7F1EC11112009824AD /* MYJSONSerizlizableTest.swift in Sources */,
 				91044C771EC0A0A3009824AD /* AccountTestClass.swift in Sources */,
 				91044C6A1EBCCF16009824AD /* MYJSONDeserizlizableTest.swift in Sources */,
 				91044C661EBCCE21009824AD /* MYJSONTests.swift in Sources */,

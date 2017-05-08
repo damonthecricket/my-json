@@ -63,7 +63,7 @@ public class AccountTestClass: MYJSONSerizlizable, MYJSONDeserizlizable {
     public var favoriteFruit: String = ""
     
     public var json: MYJSON {
-        return MYJSON()
+        return MYJSON(rawValue: ["id": id, "index": "\(index)", "guid": guid])
     }
     
     // MARK: - Object LifeCycle
