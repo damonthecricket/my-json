@@ -188,5 +188,6 @@ class MYJSONTests: XCTestCase {
         XCTAssertNotEqual(mutableLeavesJSON, json)
         XCTAssertNotEqual(allowFragmentsJSON, json)
         XCTAssertNotEqual(rawInstalledJSON, json)
+        XCTAssertEqual(json, MYJSON(rawValue: [" ":" "]))
     }
 }

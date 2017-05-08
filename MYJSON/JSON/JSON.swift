@@ -98,7 +98,11 @@ public enum MYJSON: RawRepresentable {
     // MARK: - Is
     
     public var isEmpty: Bool {
-        return isValue && value! == MYEmptyJSON
+        if isValue {
+            return value! == MYEmptyJSON
+        } else {
+            return array!.count == 1 && array![0] == MYEmptyJSON
+        }
     }
     
     public var isValue: Bool {
@@ -129,7 +133,7 @@ public enum MYJSON: RawRepresentable {
 
 // MARK: - MYJSON CustomStringConvertible, CustomDebugStringConvertible
 
-extension MYJSON:  CustomStringConvertible, CustomDebugStringConvertible {
+extension MYJSON: CustomStringConvertible, CustomDebugStringConvertible {
     public var description: String {
         return handle(
             value: { ".VALUE(\($0))" },
