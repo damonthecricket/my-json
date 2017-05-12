@@ -69,27 +69,27 @@ public class AccountTestClass: MYJSONSerizlizable, MYJSONDeserizlizable {
     // MARK: - Object LifeCycle
     
     public required init(json: MYJSON) {
-        id <- json.value?["id"]
-        index <- json.value?.number(forKey: "index").uintValue
-        guid  <- json.value?["guid"]
-        isActive <- json.value?.number(forKey: "isActive").boolValue
-        balance  <- json.value?["balance"]
-        picture  <- json.value?["picture"]
-        age      <- json.value?.number(forKey: "age").uintValue
-        eyeColor <- json.value?["eyeColor"]
-        name     <- json.value?["name"]
-        gender   <- json.value?["gender"]
-        company  <- json.value?["company"]
-        email    <- json.value?["email"]
-        phone    <- json.value?["phone"]
-        address  <- json.value?["address"]
-        about    <- json.value?["about"]
-        registered <- json.value?["registered"]
-        latitude   <- json.value?.number(forKey: "latitude").doubleValue
-        longitude  <- json.value?.number(forKey: "longitude").doubleValue
-        tags       <- json.value?["tags"]
-        friends    = (FriendTestClass.self <- json.value?["friends"])
-        greeting   <- json.value?["greeting"]
-        favoriteFruit <- json.value?["favoriteFruit"]
+        id    <- json["id"]
+        index <- json.number(forKey: "index").uintValue
+        guid  <- json["guid"]
+        isActive <- json.number(forKey: "isActive").boolValue
+        balance  <- json["balance"]
+        picture  <- json["picture"]
+        age      <- json.number(forKey: "age").uintValue
+        eyeColor <- json["eyeColor"]
+        name     <- json["name"]
+        gender   <- json["gender"]
+        company  <- json["company"]
+        email    <- json["email"]
+        phone    <- json["phone"]
+        address  <- json["address"]
+        about    <- json["about"]
+        registered <- json["registered"]
+        latitude   <- json.number(forKey: "latitude").doubleValue
+        longitude  <- json.number(forKey: "longitude").doubleValue
+        tags       <- json["tags"]
+        friends    = (FriendTestClass.self <- json["friends"])
+        greeting   <- json["greeting"]
+        favoriteFruit <- json["favoriteFruit"]
     }
 }

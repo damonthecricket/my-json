@@ -155,16 +155,16 @@ class MYJSONTests: XCTestCase {
     func testEmpty() {
         let convertedTestJSON: MYJSONType? = testJSON as? MYJSONType
         
-        if convertedTestJSON != nil && convertedTestJSON! == MYEmptyJSON {
+        if convertedTestJSON != nil && convertedTestJSON!.isEmpty {
             XCTAssertTrue(mutableContainersJSON!.isEmpty)
             XCTAssertTrue(mutableLeavesJSON!.isEmpty)
             XCTAssertTrue(allowFragmentsJSON!.isEmpty)
             XCTAssertTrue(rawInstalledJSON.isEmpty)
         } else {
-            XCTAssertTrue(mutableContainersJSON!.isEmpty)
-            XCTAssertTrue(mutableLeavesJSON!.isEmpty)
-            XCTAssertTrue(allowFragmentsJSON!.isEmpty)
-            XCTAssertTrue(rawInstalledJSON.isEmpty)
+            XCTAssertFalse(mutableContainersJSON!.isEmpty)
+            XCTAssertFalse(mutableLeavesJSON!.isEmpty)
+            XCTAssertFalse(allowFragmentsJSON!.isEmpty)
+            XCTAssertFalse(rawInstalledJSON.isEmpty)
         }
     }
     

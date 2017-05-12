@@ -28,24 +28,26 @@ public func <- <T>(lft: inout  T, rgt: Any?) {
 
 // MARK: - Deserizlizable
 
-public func <- <T: MYJSONDeserizlizable>(lhs: T.Type, rhs: Any?) -> T {
-    var model = lhs.init(json: MYJSON())
-    
+public func <- <T: MYJSONDeserizlizable>(lhs: T.Type, rhs: Any?) -> T? {
+    var model: T? = nil
     guard let right = rhs else {
-        return model
+        return nil
     }
     
     switch right {
     case is MYJSON:
         let json: MYJSON = right as! MYJSON
         model = lhs <- json
-    case is MYJSONType, is MYJSONArrayType:
+    case is MYJSONType:
+        let json = (right as! MYJSONType)
+        model = lhs <- json
+    case is MYJSONArrayType:
         let json = MYJSON(rawValue: right)
-        model = lhs.init(json: json)
+        model = lhs <- json
     case is T:
-        return right as! T
+        model = right as? T
     default:
-        return model
+        break
     }
     return model
 }
@@ -64,14 +66,14 @@ public func <- <T: MYJSONDeserizlizable>(lhs: T.Type, rhs: Any?) -> [T] {
             let model = lhs <- json
             models.append(model)
         case .array(let jsonArray):
-            let modelsArray: T = lhs <- jsonArray
-            models.append(modelsArray)
+            let json = jsonArray
+            models = lhs <- json
         }
     case is [MYJSON]:
         let jsonArray = right as! [MYJSON]
-        models = jsonArray.map({(json: MYJSON) -> T in
-            return lhs.init(json: json)
-        })
+        models = jsonArray.map{(json: MYJSON) -> T in
+            return lhs <- json
+        }
     case is MYJSONType:
         let json: MYJSONType = right as! MYJSONType
         let model = lhs <- json
@@ -83,9 +85,9 @@ public func <- <T: MYJSONDeserizlizable>(lhs: T.Type, rhs: Any?) -> [T] {
         models.append(right as! T)
     case is [T]:
         models.append(contentsOf: (right as! [T]))
-    default: break
+    default:
+        break
     }
-    
     return models
 }
 

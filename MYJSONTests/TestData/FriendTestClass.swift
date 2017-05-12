@@ -24,8 +24,8 @@ public class FriendTestClass: MYJSONSerizlizable, MYJSONDeserizlizable {
     // MARK: - Object LifeCycle
     
     public required init(json: MYJSON) {
-        id   <- json.value?.number(forKey: "id").uintValue
-        name <- json.value?.string(forKey: "name")
+        id   <- json.number(forKey: "id").uintValue
+        name <- json["name"]
     }
 }
 
