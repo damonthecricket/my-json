@@ -16,48 +16,44 @@ class MYJSONDeserizlizableTest: XCTestCase {
     // MARK: - Deserialization
     
     func testValueDeserialization() {
-        switch testJSON {
-        case .value(let json):
+        if testJSON.isValue {
+            let model = AccountTestClass.self <- testJSON
             
-            let model = AccountTestClass.self <- json
+            XCTAssertEqual(model.id, testJSON.string(forKey: "id"))
+            XCTAssertEqual(model.index, testJSON.number(forKey: "index").uintValue)
+            XCTAssertEqual(model.guid, testJSON.string(forKey: "guid"))
+            XCTAssertEqual(model.isActive, testJSON.number(forKey: "isActive").boolValue)
+            XCTAssertEqual(model.balance, testJSON.string(forKey: "balance"))
+            XCTAssertEqual(model.picture, testJSON.string(forKey: "picture"))
+            XCTAssertEqual(model.age, testJSON.number(forKey: "age").uintValue)
+            XCTAssertEqual(model.eyeColor, testJSON.string(forKey: "eyeColor"))
+            XCTAssertEqual(model.name, testJSON.string(forKey: "name"))
+            XCTAssertEqual(model.gender.rawValue, testJSON.string(forKey: "gender"))
+            XCTAssertEqual(model.company, testJSON.string(forKey: "company"))
+            XCTAssertEqual(model.email, testJSON.string(forKey: "email"))
+            XCTAssertEqual(model.phone, testJSON.string(forKey: "phone"))
+            XCTAssertEqual(model.address, testJSON.string(forKey: "address"))
+            XCTAssertEqual(model.about, testJSON.string(forKey: "about"))
+            XCTAssertEqual(model.registered, testJSON.string(forKey: "registered"))
+            XCTAssertEqual(model.latitude, testJSON.number(forKey: "latitude").doubleValue)
+            XCTAssertEqual(model.longitude, testJSON.number(forKey: "longitude").doubleValue)
+            XCTAssertEqual(model.tags, testJSON.getArray(forKey: "tags"))
             
-            XCTAssertEqual(model.id, json.string(forKey: "id"))
-            XCTAssertEqual(model.index, json.number(forKey: "index").uintValue)
-            XCTAssertEqual(model.guid, json.string(forKey: "guid"))
-            XCTAssertEqual(model.isActive, json.number(forKey: "isActive").boolValue)
-            XCTAssertEqual(model.balance, json.string(forKey: "balance"))
-            XCTAssertEqual(model.picture, json.string(forKey: "picture"))
-            XCTAssertEqual(model.age, json.number(forKey: "age").uintValue)
-            XCTAssertEqual(model.eyeColor, json.string(forKey: "eyeColor"))
-            XCTAssertEqual(model.name, json.string(forKey: "name"))
-            XCTAssertEqual(model.gender.rawValue, json.string(forKey: "gender"))
-            XCTAssertEqual(model.company, json.string(forKey: "company"))
-            XCTAssertEqual(model.email, json.string(forKey: "email"))
-            XCTAssertEqual(model.phone, json.string(forKey: "phone"))
-            XCTAssertEqual(model.address, json.string(forKey: "address"))
-            XCTAssertEqual(model.about, json.string(forKey: "about"))
-            XCTAssertEqual(model.registered, json.string(forKey: "registered"))
-            XCTAssertEqual(model.latitude, json.number(forKey: "latitude").doubleValue)
-            XCTAssertEqual(model.longitude, json.number(forKey: "longitude").doubleValue)
-            XCTAssertEqual(model.tags, json["tags"] as! [String])
-            
-            let friendsJSON = json["friends"] as! [MYJSONType]
-            for (idx, friendJSON) in friendsJSON.enumerated() {
+
+            for (idx, friendJSON) in testJSON.jsonArray(forKey: "friends").enumerated() {
                 XCTAssertEqual(model.friends[idx].id, friendJSON.number(forKey: "id").uintValue)
                 XCTAssertEqual(model.friends[idx].name, friendJSON.string(forKey: "name"))
             }
             
-            XCTAssertEqual(model.greeting, json.string(forKey: "greeting"))
-            XCTAssertEqual(model.favoriteFruit, json.string(forKey: "favoriteFruit"))
-        default:
-            break
+            XCTAssertEqual(model.greeting, testJSON.string(forKey: "greeting"))
+            XCTAssertEqual(model.favoriteFruit, testJSON.string(forKey: "favoriteFruit"))
+
         }
     }
     
     func testArrayDeserialization() {
-        switch testJSON {
-        case .array(let jsonArray):
-            let accounts: [AccountTestClass] = AccountTestClass.self <- jsonArray
+        if testJSON.isArray {
+            let accounts: [AccountTestClass] = AccountTestClass.self <- testJSON.array
             
             for (idx, account) in accounts.enumerated() {
                 
@@ -82,9 +78,14 @@ class MYJSONDeserizlizableTest: XCTestCase {
                 XCTAssertEqual(account.latitude, json.number(forKey: "latitude").doubleValue, "IDX = \(idx)")
                 XCTAssertEqual(account.longitude, json.number(forKey: "longitude").doubleValue, "IDX = \(idx)")
                 XCTAssertEqual(account.tags, json.array(forKey: "tags"), "IDX = \(idx)")
+<<<<<<< HEAD
                 
                 let friendsJSON = json["friends"] as! [MYJSONType]
                 for (idx, friendJSON) in friendsJSON.enumerated() {
+=======
+
+                for (idx, friendJSON) in testJSON.jsonArray(forKey: "friends").enumerated() {
+>>>>>>> master
                     XCTAssertEqual(account.friends[idx].id, friendJSON.number(forKey: "id").uintValue, "IDX = \(idx)")
                     XCTAssertEqual(account.friends[idx].name, friendJSON.string(forKey: "name"), "IDX = \(idx)")
                 }
@@ -92,8 +93,6 @@ class MYJSONDeserizlizableTest: XCTestCase {
                 XCTAssertEqual(account.greeting, json.string(forKey: "greeting"), "IDX = \(idx)")
                 XCTAssertEqual(account.favoriteFruit, json.string(forKey: "favoriteFruit"), "IDX = \(idx)")
             }
-        default:
-            break
         }
     }
 }
