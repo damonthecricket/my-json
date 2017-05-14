@@ -10,4 +10,7 @@ import Foundation
 
 // MARK: - Operators
 
+/**
+ Ifix operator. Used for MYJSON deserialization. 
+ */
 infix operator <-

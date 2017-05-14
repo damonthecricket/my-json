@@ -30,11 +30,11 @@ class MYJSONTests: XCTestCase {
         super.setUp()
 
         
-        mutableContainersJSON = try? MYJSON(withAllowFragmentsJSONData: testJSONData)
+        mutableContainersJSON = try? JSONSerialization.mutableContainersJSON(with: testJSONData)
 
-        mutableLeavesJSON = try? MYJSON(withMutableLeavesJSONData: testJSONData)
+        mutableLeavesJSON = try? JSONSerialization.mutableLeavesJSON(with: testJSONData)
         
-        allowFragmentsJSON = try? MYJSON(withAllowFragmentsJSONData: testJSONData)
+        allowFragmentsJSON = try? JSONSerialization.allowFragmentsJSON(with: testJSONData)
         
         rawInstalledJSON = MYJSON(rawValue: testJSON)
     }
@@ -171,10 +171,10 @@ class MYJSONTests: XCTestCase {
     // MARK: - Data
     
     func testData() {
-        XCTAssertNotEqual(try? mutableContainersJSON!.prettyPrintedData(), testJSONData)
-        XCTAssertNotEqual(try? mutableLeavesJSON!.prettyPrintedData(), testJSONData)
-        XCTAssertNotEqual(try? allowFragmentsJSON!.prettyPrintedData(), testJSONData)
-        XCTAssertEqual(try! rawInstalledJSON.prettyPrintedData(), testJSONData)
+        XCTAssertNotEqual(try? JSONSerialization.prettyPrintedData(withJSON: mutableContainersJSON!), testJSONData)
+        XCTAssertNotEqual(try? JSONSerialization.prettyPrintedData(withJSON: mutableLeavesJSON!), testJSONData)
+        XCTAssertNotEqual(try? JSONSerialization.prettyPrintedData(withJSON: allowFragmentsJSON!), testJSONData)
+        XCTAssertEqual(try! JSONSerialization.prettyPrintedData(withJSON: rawInstalledJSON), testJSONData)
     }
     
     func testEquality() {
