@@ -31,6 +31,6 @@ class MYJSONSerizlizableTest: XCTestCase {
         
         XCTAssertEqual(rawData, data)
         XCTAssertEqual(rawData, prettyPrintedData)
-        XCTAssertEqual(rawData, try? testJSON.prettyPrintedData())
+        XCTAssertEqual(rawData, try? JSONSerialization.prettyPrintedData(withJSON: testJSON))
     }
 }

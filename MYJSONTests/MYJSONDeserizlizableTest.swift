@@ -78,14 +78,8 @@ class MYJSONDeserizlizableTest: XCTestCase {
                 XCTAssertEqual(account.latitude, json.number(forKey: "latitude").doubleValue, "IDX = \(idx)")
                 XCTAssertEqual(account.longitude, json.number(forKey: "longitude").doubleValue, "IDX = \(idx)")
                 XCTAssertEqual(account.tags, json.array(forKey: "tags"), "IDX = \(idx)")
-<<<<<<< HEAD
-                
-                let friendsJSON = json["friends"] as! [MYJSONType]
-                for (idx, friendJSON) in friendsJSON.enumerated() {
-=======
 
                 for (idx, friendJSON) in testJSON.jsonArray(forKey: "friends").enumerated() {
->>>>>>> master
                     XCTAssertEqual(account.friends[idx].id, friendJSON.number(forKey: "id").uintValue, "IDX = \(idx)")
                     XCTAssertEqual(account.friends[idx].name, friendJSON.string(forKey: "name"), "IDX = \(idx)")
                 }
