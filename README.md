@@ -1,5 +1,5 @@
 # MYJSON
-
+![MYJSON](https://github.com/damonthecricket/my-json/blob/master/my-json-lib.jpg)
 Swift JSON framework.
 
 MYJSON is a simple Swift library to convert JSON to strongly typed objects.
