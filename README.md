@@ -4,10 +4,10 @@ Swift JSON framework.
 
 MYJSON is a simple Swift library to convert JSON to strongly typed objects.
 
-1. [Features](#Features)
-2. [Installation](#Installation)
-3. [Requirements](#Requirements)
-4. [Usage](#Usage)
+1. [Features](### Features)
+2. [Installation](### Installation)
+3. [Requirements](### Requirements)
+4. [Usage](### Usage)
     - [MYJSON](#MYJSON)
     - [Deserializing](#Deserializing)
     
