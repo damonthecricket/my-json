@@ -27,22 +27,28 @@ MYJSON is a simple Swift library to convert JSON to strongly typed objects.
   ```ruby
   use_frameworks!
   
-  pod "ModelMapper"
+  pod "MYJSON"
   ```
 
 - #### [Carthage](https://github.com/Carthage/Carthage)
 
   ```
-  github "lyft/mapper"
+  github "damonthecricket/MYJSON"
   ```
 
-- ### [Git](https://git-scm.com/)
+- #### [Git](https://git-scm.com/)
 
   ```
   $ git submodule add https://github.com/damonthecricket/my-json.git
   ```
-- ### Manually
-  Manually
+- #### Manually
+
+  - Copy MYJSON to the root of your project.
+  
+  - Add it in file inspector of your project.
+  
+  - Go to Targets -> Add MYJSON to Embedded Binaries.
+  
 ### Requirements
   
  - iOS 8.0+  |  macOS 10.10+  |  tvOS 9.0+  |  watchOS 2.0+
