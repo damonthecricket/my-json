@@ -186,12 +186,11 @@ Let's say we have a simple account class and gender enum:
     var gender: GenderTestEnum = .male
     var name: String = ""
   }
-  
 ```
 and JSON like this:
 
 ```swift
- let TestJSON: MYJSONType =[
+ let testJSON: MYJSONType =[
         "id": "590c8ed16470876ae51b4bd8",                 
         "index": 0,
         "guid": "c0fcc2d9-415d-415f-a081-d9d9aedc4b9c",
@@ -205,7 +204,30 @@ and JSON like this:
         "company": "ZENTILITY"
 ]
 ```
-We can add JSON deserialization to this class:
+We can add JSON deserialization to this class easily:
+```swift
+  extension Account: MYJSONDeserizlizable {
+      init(json: MYJSON) {
+            id <- json["id"]
+            index <- json.number(forKey: "index").uintValue
+            balance <- json["balance"]
+            age <- json.number(forKey: "index").uintValue
+            gender <- json["gender"]
+            name <- json["name"]
+      }
+  }
+```
+
+and after that we can deserialize JSON into Account instance very simple and easy:
+```swift
+let json = MYJSON(rawValue: testJSON)
+let account: Account = Account.self <- json
+```
+or in case of ```array of dictionaries```:
+```swift
+let jsonArray = MYJSON(rawValue: testJSON)
+let account: [Account] = Account.self <- jsonArray
+```
 
 
 
