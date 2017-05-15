@@ -10,18 +10,19 @@ MYJSON is a simple Swift library to convert JSON to strongly typed objects.
 4. [Usage](#usage)
     - [JSON](#json)
     - [Deserializing](#deserializing)
+    - [Serializing](#serializing)
     
 
 
 ### Features
 
-- Mapping JSON to objects
+- Mapping JSON to objects.
 
-- Mapping objects to JSON
+- Mapping objects to JSON.
 
-- Custom transformations
+- Custom transformations.
 
-- Easy and safe using
+- Easy and safe using.
 
 ### Installation
 
@@ -54,11 +55,11 @@ MYJSON is a simple Swift library to convert JSON to strongly typed objects.
   
 ### Requirements
   
- - iOS 8.0+  |  macOS 10.10+  |  tvOS 9.0+  |  watchOS 2.0+
+ - iOS 8.0+  |  macOS 10.10+  |  tvOS 9.0+  |  watchOS 2.0+.
  
- - Xcode 8
+ - Xcode 8.
  
- - Swift 3
+ - Swift 3.
  
 ### Usage
 
@@ -138,7 +139,7 @@ if let json = try? JSONSerialization.allowFragmentsJSON(with: data) {
 
 3. In third case ```MYJSON``` instance initialized from raw ```JSON data``` and hold associated value.
 
-> *Note*: ```MYJSON init(rawValue: Any)``` takes only two type of input value - ```MYJSONType``` (```[String: Any]```) or ```MYJSONArrayType``` (```[[String: Any]]```), otherwise initializer returns empty MYJSON.
+> *Note*: ```MYJSON init(rawValue: Any)``` takes only two type of input parameter - ```MYJSONType``` (```[String: Any]```) or ```MYJSONArrayType``` (```[[String: Any]]```), otherwise initializer returns empty MYJSON.
 
 ##### Properties
 ```MYJSON``` has a useful properties and functions. For example, you can you can check wheter instance is ```dictionary``` or ```array of dictionaries```:
@@ -154,7 +155,7 @@ if json.isArray {
 }
 
 ```
-Also you can access to JSON associated value, whether it ```dictionary``` or ```array of dictionaries```.
+Also you can access to JSON associated value.
 For ```dictionary```:
 ```swift
 import MYJSON
@@ -172,7 +173,7 @@ var json: MYJSONType = jsonArray[0]
 
 Let's say we have a simple account class and gender enum:
 ```swift
-
+  
   enum Gender: String {
     case male = "male"
     case female = "female"
@@ -190,6 +191,8 @@ Let's say we have a simple account class and gender enum:
 and JSON like this:
 
 ```swift
+ import MYJSON
+ 
  let testJSON: MYJSONType =[
         "id": "590c8ed16470876ae51b4bd8",                 
         "index": 0,
@@ -206,6 +209,8 @@ and JSON like this:
 ```
 We can add JSON deserialization to this class easily:
 ```swift
+  import MYJSON
+  
   extension Account: MYJSONDeserizlizable {
       init(json: MYJSON) {
             id <- json["id"]
@@ -220,14 +225,49 @@ We can add JSON deserialization to this class easily:
 
 and after that we can deserialize JSON into Account instance very simple and easy:
 ```swift
+import MYJSON
+
 let json = MYJSON(rawValue: testJSON)
 let account: Account = Account.self <- json
 ```
 or in case of ```array of dictionaries```:
 ```swift
+import MYJSON
+
 let jsonArray = MYJSON(rawValue: testJSON)
 let account: [Account] = Account.self <- jsonArray
 ```
+#### Serializing
+Also MYJSON lib has a feature to serialize. For that we should to implement ```MYJSONSerizlizable protocol```, and specifically implement required protocol properry ```var json: MYJSON```.
+Let's consider simple class Friend:
+```swift
+class Friend {
+    var id: UInt = 0
+    var name: String = ""
+}
+```
+We can add JSON serialization to this class:
+```swift
+import MYJSON
 
+extension Friend: MYJSONSerizlizable {
+    var json: MYJSON {
+        return MYJSON(rawValue: ["id": id, "name": name])
+    }
+}
+```
+Now we can serialize Friend instance to ```MYJSON```:
+```swift
+import MYJSON
 
+let friend: Friend = <...>
+let json = friend.json
+```
+Then we have opportunity to serialize ```MYJSON``` instance to ```Data``` using JSONSerialization extension:
+```swift
+import MYJSON
 
+if let data = try? JSONSerialization.prettyPrintedData(withJSON: json) {
+    // Code
+}
+```
