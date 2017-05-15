@@ -8,8 +8,8 @@ MYJSON is a simple Swift library to convert JSON to strongly typed objects.
 2. [Installation](#installation)
 3. [Requirements](#requirements)
 4. [Usage](#usage)
-    - [MYJSON](#MYJSON)
-    - [Deserializing](#Deserializing)
+    - [MYJSON](#myjson)
+    - [Deserializing](#deserializing)
     
 
 
