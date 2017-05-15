@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MYJSON.xcodeproj">
+      location = "self:/Users/optimusprime/Documents/Work/my-json/MYJSON.xcodeproj">
    </FileRef>
 </Workspace>

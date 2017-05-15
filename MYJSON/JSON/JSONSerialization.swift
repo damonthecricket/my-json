@@ -6,6 +6,8 @@
 //  Copyright © 2017 Trenlab. All rights reserved.
 //
 
+import Foundation
+
 // MARK: - MYJSONSerizlizable
 
 /**
