@@ -1,5 +1,5 @@
 # MYJSON
-[![Travis CI](https://travis-ci.org/damonthecricket/my-json.svg?branch=master)](https://travis-ci.org/damonthecricket/my-json)
+[![Travis CI](https://travis-ci.org/damonthecricket/my-json.svg?branch=master)](https://travis-ci.org/damonthecricket/my-json)[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![MYJSON](https://github.com/damonthecricket/my-json/blob/master/my-json-lib.jpg)
 Swift JSON framework.
 
