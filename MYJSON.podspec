@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   }
   spec.authors = { 
     "Damon Cricket" => 'damon.the.cricket@gmail.com' 
-    }
+  }
   spec.social_media_url = "https://www.facebook.com/damonthecricketprograms/"
 
   spec.osx.deployment_target = "10.9"
@@ -17,6 +17,10 @@ Pod::Spec.new do |spec|
   spec.tvos.deployment_target = "9.0"
 
   spec.requires_arc = true
-  spec.source = { git: "https://github.com/damonthecricket/my-json.git", tag: "v#{spec.version}", submodules: true }
+  spec.source = { 
+    git: "https://github.com/damonthecricket/my-json.git",
+    tag: "{spec.version}",
+    submodules: true
+    }
   spec.source_files = "MYJSON/*.{h,swift}"
 end
