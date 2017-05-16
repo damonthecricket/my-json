@@ -56,7 +56,7 @@ public enum MYJSON: RawRepresentable {
     /**
      `MYJSON` enum value with associated MYJSONType value.
      */
-    case value(MYJSONType)
+    case dictionary(MYJSONType)
     
     /**z
      `MYJSON` enum value with associated MYJSONArrayType value.
@@ -82,11 +82,11 @@ public enum MYJSON: RawRepresentable {
     public init(rawValue: Any) {
         switch rawValue {
         case is MYJSONType:
-            self = .value(rawValue as! MYJSONType)
+            self = .dictionary(rawValue as! MYJSONType)
         case is MYJSONArrayType:
             self = .array(rawValue as! MYJSONArrayType)
         default:
-            self = .value(MYEmptyJSON)
+            self = .dictionary(MYEmptyJSON)
         }
     }
 
@@ -96,14 +96,14 @@ public enum MYJSON: RawRepresentable {
      Returns `RawValue`.
      */
     public var rawValue: RawValue {
-        return isValue ? value as Any : array as Any
+        return isValue ? dictionary as Any : array as Any
     }
     
     /**
      Returns instance of `MYJSONType` if the JSON is a dictionary, `nil` otherwise.
      */
-    public var value: MYJSONType? {
-        if case .value(let json) = self {
+    public var dictionary: MYJSONType? {
+        if case .dictionary(let json) = self {
             return json
         }
         return nil
@@ -126,7 +126,7 @@ public enum MYJSON: RawRepresentable {
      */
     public var isEmpty: Bool {
         if isValue {
-            return value! == MYEmptyJSON
+            return dictionary! == MYEmptyJSON
         } else {
             return array!.count == 1 && array![0] == MYEmptyJSON
         }
@@ -136,7 +136,7 @@ public enum MYJSON: RawRepresentable {
      Returns `true` if the JSON is a value, `false` otherwise. 
      */
     public var isValue: Bool {
-        if case .value(_) = self {
+        if case .dictionary(_) = self {
             return true
         } else {
             return false
@@ -167,7 +167,7 @@ public enum MYJSON: RawRepresentable {
      */
     public func handle<T>(value: (MYJSONType) -> T, array: (MYJSONArrayType) -> T) -> T {
         switch self {
-        case .value(let json):
+        case .dictionary(let json):
             return value(json)
         case .array(let jsonArray):
             return array(jsonArray)
@@ -177,8 +177,8 @@ public enum MYJSON: RawRepresentable {
     // MARK: - Subscript
     
     /**
-     Returns `value` if contains contains a `dictionary` and there is сorresponding key value.
-     Otherwise, returns `nil` if there is no сorresponding key value or JSON is an  array.
+     Returns `value` if instance contains a `dictionary` and there is сorresponding value for key.
+     Otherwise, returns `nil` if there is no сorresponding key value or JSON is an `array`.
      
      - Parameters:
          - key: A key to find in the dictionary.
@@ -186,7 +186,7 @@ public enum MYJSON: RawRepresentable {
     public subscript(key: MYJSONKey) -> MYJSONValue? {
         set(newValue) {
             switch self {
-            case .value(var json):
+            case .dictionary(var json):
                 if newValue == nil {
                     json.removeValue(forKey: key)
                 } else {
@@ -197,10 +197,39 @@ public enum MYJSON: RawRepresentable {
             }
         } get {
             switch self {
-            case .value(let json):
+            case .dictionary(let json):
                 return json[key]
             case .array(_):
                 return nil
+            }
+        }
+    }
+    
+    /**
+     Returns `JSON` if instance contains an `array` and there is сorresponding value for index.
+     Otherwise, returns `nil` if there is no сorresponding value for key or JSON is a `dictionary`.
+     
+     - Parameters:
+         - idx: A key to find in the dictionary.
+     */
+    public subscript(idx: Int) -> MYJSONType? {
+        set(newValue) {
+            switch self {
+            case .dictionary(_):
+                break
+            case .array(var array):
+                if newValue == nil {
+                    array.remove(at: idx)
+                } else {
+                    array[idx] = newValue!
+                }
+            }
+        } get {
+            switch self {
+            case .dictionary(_):
+                return nil
+            case .array(let array):
+                return array[idx]
             }
         }
     }
@@ -217,7 +246,7 @@ public enum MYJSON: RawRepresentable {
         guard isJSON(forKey: key) else {
             return MYEmptyJSON
         }
-        return value!.json(forKey: key)
+        return dictionary!.json(forKey: key)
     }
     
     /**
@@ -231,7 +260,7 @@ public enum MYJSON: RawRepresentable {
         guard isJSONArray(forKey: key) else {
             return []
         }
-        return value!.jsonArray(forKey: key)
+        return dictionary!.jsonArray(forKey: key)
     }
 
     // MARK: - Number
@@ -247,7 +276,7 @@ public enum MYJSON: RawRepresentable {
         guard isValue else {
             return NSNumber()
         }
-        return value!.number(forKey: key)
+        return dictionary!.number(forKey: key)
     }
     
     // MARK: - String
@@ -263,7 +292,7 @@ public enum MYJSON: RawRepresentable {
         guard isValue else {
             return ""
         }
-        return value!.string(forKey: key)
+        return dictionary!.string(forKey: key)
     }
     
     // MARK: - Array
@@ -279,7 +308,7 @@ public enum MYJSON: RawRepresentable {
         guard isValue else {
             return []
         }
-        return value!.array(forKey: key)
+        return dictionary!.array(forKey: key)
     }
 
     // MARK: - Is JSON
@@ -295,7 +324,7 @@ public enum MYJSON: RawRepresentable {
         guard isValue else {
             return false
         }
-        return value!.isJSON(forKey: key)
+        return dictionary!.isJSON(forKey: key)
     }
     
     /**
@@ -309,7 +338,7 @@ public enum MYJSON: RawRepresentable {
         guard isValue else {
             return false
         }
-        return value!.isJSONArray(forKey: key)
+        return dictionary!.isJSONArray(forKey: key)
     }
     
     /**
@@ -323,7 +352,7 @@ public enum MYJSON: RawRepresentable {
         guard isValue else {
             return false
         }
-        return value!.isValue(forKey: key)
+        return dictionary!.isValue(forKey: key)
     }
 }
 
@@ -354,7 +383,7 @@ extension MYJSON: CustomStringConvertible, CustomDebugStringConvertible {
 extension MYJSON: Equatable {
     public static func ==(lhs: MYJSON, rhs: MYJSON) -> Bool {
         if lhs.isValue && rhs.isValue {
-            return lhs.value! == rhs.value!
+            return lhs.dictionary! == rhs.dictionary!
         } else if lhs.isArray && rhs.isArray {
             return lhs.array! == rhs.array!
         }

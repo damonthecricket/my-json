@@ -77,10 +77,10 @@ class MYJSONTests: XCTestCase {
             XCTAssertFalse(allowFragmentsJSON!.isArray)
             XCTAssertFalse(rawInstalledJSON.isArray)
             
-            XCTAssertNotNil(mutableContainersJSON!.value)
-            XCTAssertNotNil(mutableLeavesJSON!.value)
-            XCTAssertNotNil(allowFragmentsJSON!.value)
-            XCTAssertNotNil(rawInstalledJSON.value)
+            XCTAssertNotNil(mutableContainersJSON!.dictionary)
+            XCTAssertNotNil(mutableLeavesJSON!.dictionary)
+            XCTAssertNotNil(allowFragmentsJSON!.dictionary)
+            XCTAssertNotNil(rawInstalledJSON.dictionary)
             
             XCTAssertNil(mutableContainersJSON!.array)
             XCTAssertNil(mutableLeavesJSON!.array)
@@ -94,15 +94,15 @@ class MYJSONTests: XCTestCase {
             XCTAssertTrue((allowFragmentsJSON!.rawValue as! MYJSONType) == convertedTestJSON)
             XCTAssertTrue((rawInstalledJSON.rawValue as! MYJSONType) == convertedTestJSON)
             
-            XCTAssertTrue(mutableContainersJSON!.value! == convertedTestJSON)
-            XCTAssertTrue(mutableLeavesJSON!.value! == convertedTestJSON)
-            XCTAssertTrue(allowFragmentsJSON!.value! == convertedTestJSON)
-            XCTAssertTrue(rawInstalledJSON!.value! == convertedTestJSON)
+            XCTAssertTrue(mutableContainersJSON!.dictionary! == convertedTestJSON)
+            XCTAssertTrue(mutableLeavesJSON!.dictionary! == convertedTestJSON)
+            XCTAssertTrue(allowFragmentsJSON!.dictionary! == convertedTestJSON)
+            XCTAssertTrue(rawInstalledJSON!.dictionary! == convertedTestJSON)
             
-            XCTAssertTrue(mutableContainersJSON!.value! == (mutableContainersJSON!.rawValue as! MYJSONType))
-            XCTAssertTrue(mutableLeavesJSON!.value! == (mutableLeavesJSON!.rawValue as! MYJSONType))
-            XCTAssertTrue(allowFragmentsJSON!.value! == (allowFragmentsJSON!.rawValue as! MYJSONType))
-            XCTAssertTrue(rawInstalledJSON!.value! == (rawInstalledJSON.rawValue as! MYJSONType))
+            XCTAssertTrue(mutableContainersJSON!.dictionary! == (mutableContainersJSON!.rawValue as! MYJSONType))
+            XCTAssertTrue(mutableLeavesJSON!.dictionary! == (mutableLeavesJSON!.rawValue as! MYJSONType))
+            XCTAssertTrue(allowFragmentsJSON!.dictionary! == (allowFragmentsJSON!.rawValue as! MYJSONType))
+            XCTAssertTrue(rawInstalledJSON!.dictionary! == (rawInstalledJSON.rawValue as! MYJSONType))
         default:
             break
         }
@@ -126,10 +126,10 @@ class MYJSONTests: XCTestCase {
             XCTAssertNotNil(allowFragmentsJSON!.array)
             XCTAssertNotNil(rawInstalledJSON.array)
             
-            XCTAssertNil(mutableContainersJSON!.value)
-            XCTAssertNil(mutableLeavesJSON!.value)
-            XCTAssertNil(allowFragmentsJSON!.value)
-            XCTAssertNil(rawInstalledJSON.value)
+            XCTAssertNil(mutableContainersJSON!.dictionary)
+            XCTAssertNil(mutableLeavesJSON!.dictionary)
+            XCTAssertNil(allowFragmentsJSON!.dictionary)
+            XCTAssertNil(rawInstalledJSON.dictionary)
             
             let convertedTestJSON: MYJSONArrayType = testJSON as! MYJSONArrayType
             

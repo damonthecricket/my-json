@@ -23,7 +23,7 @@ class MYJSONSerizlizableTest: XCTestCase {
         
         let rawData: Data?
         switch testJSON {
-        case .value(let json):
+        case .dictionary(let json):
             rawData = try? JSONSerialization.data(withJSONObject: json, options: [JSONSerialization.WritingOptions.prettyPrinted])
         case .array(let jsonArray):
             rawData = try? JSONSerialization.data(withJSONObject: jsonArray, options: [JSONSerialization.WritingOptions.prettyPrinted])

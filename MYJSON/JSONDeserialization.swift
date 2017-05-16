@@ -127,7 +127,7 @@ public func <- <T: MYJSONDeserizlizable>(lhs: T.Type, rhs: Any?) -> [T] {
     switch right {
     case is MYJSON:
         switch (right as! MYJSON) {
-        case .value(let json):
+        case .dictionary(let json):
             let model = lhs <- json
             models.append(model)
         case .array(let jsonArray):
