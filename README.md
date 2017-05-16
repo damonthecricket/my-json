@@ -1,5 +1,5 @@
 # MYJSON
-[![Version](https://img.shields.io/github/release/damonthecricket/MYJSON.svg)](https://github.com/soffes/MYJSON/releases)
+[![Version](https://img.shields.io/github/release/damonthecricket/my-json.svg)](https://github.com/damonthecricket/my-json/releases)
 [![Travis CI](https://travis-ci.org/damonthecricket/my-json.svg?branch=master)](https://travis-ci.org/damonthecricket/my-json)
 ![CocoaPods](https://img.shields.io/cocoapods/v/MYJSON.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
