@@ -1,0 +1,7 @@
+osx_image: 8.3.2
+language: objective-c
+script:
+- set -o pipefail
+- travis_retry xcodebuild -workspace MYJSON.xcworkspace -scheme "MYJSON iOS" -destination "platform=iOS Simulator,name=iPhone 6" build-for-testing test | xcpretty
+- travis_retry xcodebuild -workspace MYJSON.xcworkspace -scheme "SwiftyJSON OSX" build-for-testing test | xcpretty
+- travis_retry xcodebuild -workspace SwiftyJSON.xcworkspace -scheme "SwiftyJSON tvOS" -destination "platform=tvOS Simulator,name=Apple TV 1080p" build-for-testing test | xcpretty
