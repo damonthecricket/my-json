@@ -31,7 +31,7 @@ MYJSON is a simple Swift library to convert JSON to strongly typed objects.
   ```ruby
   use_frameworks!
   
-  pod "MYJSON"
+  pod 'MYJSON'
   ```
 
 - #### [Carthage](https://github.com/Carthage/Carthage)
