@@ -1,8 +1,8 @@
 # MYJSON
 [![Version](https://img.shields.io/github/release/damonthecricket/MYJSON.svg)](https://github.com/soffes/MYJSON/releases)
-[![Travis CI](https://travis-ci.org/damonthecricket/my-json.svg?branch=master)](https://travis-ci.org/damonthecricket/my-json) 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) 
-![CocoaPods](https://img.shields.io/cocoapods/v/MYJSON.svg) 
+[![Travis CI](https://travis-ci.org/damonthecricket/my-json.svg?branch=master)](https://travis-ci.org/damonthecricket/my-json)
+![CocoaPods](https://img.shields.io/cocoapods/v/MYJSON.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Platform](https://img.shields.io/badge/platforms-iOS%208.0+%20%7C%20macOS%2010.10+%20%7C%20tvOS%209.0+%20%7C%20watchOS%202.0+-333333.svg)
 
 ![MYJSON](https://github.com/damonthecricket/my-json/blob/master/my-json-lib.jpg)
