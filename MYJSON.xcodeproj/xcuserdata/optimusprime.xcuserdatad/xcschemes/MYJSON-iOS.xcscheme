@@ -20,6 +20,48 @@
                ReferencedContainer = "container:MYJSON.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9102C9781EC902AD005E5283"
+               BuildableName = "MYJSON.framework"
+               BlueprintName = "MYJSON-macOS"
+               ReferencedContainer = "container:MYJSON.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9102C9651EC90168005E5283"
+               BuildableName = "MYJSON.framework"
+               BlueprintName = "MYJSON-tvOS"
+               ReferencedContainer = "container:MYJSON.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9102C9531EC90118005E5283"
+               BuildableName = "MYJSON.framework"
+               BlueprintName = "MYJSON-watchOS"
+               ReferencedContainer = "container:MYJSON.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -99,7 +141,6 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "MYJSON iOS"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
