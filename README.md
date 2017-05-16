@@ -1,4 +1,5 @@
 # MYJSON
+[![Travis CI](https://travis-ci.org/damonthecricket/my-json.svg?branch=master)](https://travis-ci.org/damonthecricket/my-json)
 ![MYJSON](https://github.com/damonthecricket/my-json/blob/master/my-json-lib.jpg)
 Swift JSON framework.
 
