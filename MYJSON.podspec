@@ -19,5 +19,4 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
   spec.source = { git: "https://github.com/damonthecricket/my-json.git", tag: "v#{spec.version}", submodules: true }
   spec.source_files = "MYJSON/*.{h,swift}"
-  spec.dependency "MYJSON", "~> 1.0.0"
 end
