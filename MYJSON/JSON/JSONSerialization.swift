@@ -44,7 +44,7 @@ public extension JSONSerialization {
     public class func data(withJSON json: MYJSON, options opt: JSONSerialization.WritingOptions = []) throws -> Data {
         let JSONObject: Any
         switch json {
-        case .value(let jsonValue):
+        case .dictionary(let jsonValue):
             JSONObject = jsonValue
         case .array(let jsonArray):
             JSONObject = jsonArray
