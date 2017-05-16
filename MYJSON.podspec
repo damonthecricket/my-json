@@ -20,7 +20,9 @@ Pod::Spec.new do |spec|
   spec.source = { 
     :git => "https://github.com/damonthecricket/my-json.git",
     :tag => spec.version,
-    :submodules => true
-    }
+  }
   spec.source_files = "MYJSON/*.{h,swift}"
+  spec.pod_target_xcconfig =  {
+        'SWIFT_VERSION' => '3.0',
+  }
 end
