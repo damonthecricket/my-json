@@ -1,7 +1,45 @@
-osx_image: 8.3.2
-language: objective-c
+osx_image: 
+- 8.3.2
+- 8.3.1
+- 8.3.0
+
+language:  
+- objective-c
+- swift
+
+xcode_project: MYJSON.xcodeproj
+
+branches:
+  only:
+  - master
+
+env:
+  global:
+  - FRAMEWORK_NAME = MYJSON
+  - USER_NAME = damonthecricket
+  - REPO_NAME = my-json
+
+before_install:
+- rvm get head
+- brew update
+- brew outdated carthage || brew upgrade carthage
+
+before_deploy:
+- carthage build --no-skip-current
+- carthage archive $FRAMEWORK_NAME
+
 script:
-- set -o pipefail
-- travis_retry xcodebuild -workspace MYJSON.xcworkspace -scheme "MYJSON iOS" -destination "platform=iOS Simulator,name=iPhone 6" build-for-testing test | xcpretty
-- travis_retry xcodebuild -workspace MYJSON.xcworkspace -scheme "SwiftyJSON OSX" build-for-testing test | xcpretty
-- travis_retry xcodebuild -workspace SwiftyJSON.xcworkspace -scheme "SwiftyJSON tvOS" -destination "platform=tvOS Simulator,name=Apple TV 1080p" build-for-testing test | xcpretty
+- travis_retry xcodebuild -project $FRAMEWORK_NAME.xcworkspace -scheme "$FRAMEWORK_NAME iOS" -destination "platform=iOS Simulator,name=iPhone 6" build-for-testing test | xcpretty
+- travis_retry xcodebuild -project $FRAMEWORK_NAME.xcworkspace -scheme "$FRAMEWORK_NAME macOS" build-for-testing test | xcpretty
+- travis_retry xcodebuild -project $FRAMEWORK_NAME.xcworkspace -scheme "$FRAMEWORK_NAME tvOS" -destination "platform=tvOS Simulator,name=Apple TV 1080p" build-for-testing test | xcpretty
+- travis_retry xcodebuild -project $FRAMEWORK_NAME.xcworkspace -scheme "$FRAMEWORK_NAME watchOS" -destination "platform=watchOS Simulator,name=Apple Watch Series 2 - 42mm" build-for-testing test | xcpretty
+
+deploy:
+  provider: releases
+  api_key:
+    secure: c3d04399edb8c1b431e51c657fc814d3c43e1576
+  file: $FRAMEWORK_NAME.framework.zip
+  skip_cleanup: true
+  on:
+    repo: $USER_NAME/$REPO_NAME
+    tags: true
