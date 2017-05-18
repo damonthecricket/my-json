@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E68540F1ECE379E002A7743 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E68540B1ECE379E002A7743 /* Info-iOS.plist */; };
-		4E6854101ECE379E002A7743 /* Info-macOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E68540C1ECE379E002A7743 /* Info-macOS.plist */; };
-		4E6854111ECE379E002A7743 /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E68540D1ECE379E002A7743 /* Info-tvOS.plist */; };
-		4E6854121ECE379E002A7743 /* Info-watchOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E68540E1ECE379E002A7743 /* Info-watchOS.plist */; };
 		91044C3D1EBB9572009824AD /* MYJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91044C331EBB9572009824AD /* MYJSON.framework */; };
 		91044C441EBB9572009824AD /* MYJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 91044C361EBB9572009824AD /* MYJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91044C661EBCCE21009824AD /* MYJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C651EBCCE21009824AD /* MYJSONTests.swift */; };
@@ -385,10 +381,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E6854111ECE379E002A7743 /* Info-tvOS.plist in Resources */,
-				4E6854101ECE379E002A7743 /* Info-macOS.plist in Resources */,
-				4E6854121ECE379E002A7743 /* Info-watchOS.plist in Resources */,
-				4E68540F1ECE379E002A7743 /* Info-iOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
