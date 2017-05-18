@@ -4,6 +4,8 @@ language:  swift
 
 xcode_project: MYJSON.xcodeproj
 
+xcode_sdk: iphonesimulator10.0
+
 branches:
   only:
   - master
