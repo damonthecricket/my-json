@@ -12,21 +12,46 @@
 		<key>MYJSON-macOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<key>MYJSON-tvOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<key>MYJSON-watchOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>3</integer>
+		</dict>
+		<key>MYJSONTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>4E6853DB1ECE3392002A7743</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4E6853E81ECE33B1002A7743</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4E6853F51ECE359A002A7743</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4E6854021ECE3655002A7743</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9102C9531EC90118005E5283</key>
 		<dict>
 			<key>primary</key>

@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9102C9531EC90118005E5283"
-               BuildableName = "MYJSON.framework"
+               BlueprintIdentifier = "4E6854021ECE3655002A7743"
+               BuildableName = "MYJSON-watchOS.framework"
                BlueprintName = "MYJSON-watchOS"
                ReferencedContainer = "container:MYJSON.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9102C9531EC90118005E5283"
-            BuildableName = "MYJSON.framework"
+            BlueprintIdentifier = "4E6854021ECE3655002A7743"
+            BuildableName = "MYJSON-watchOS.framework"
             BlueprintName = "MYJSON-watchOS"
             ReferencedContainer = "container:MYJSON.xcodeproj">
          </BuildableReference>
@@ -63,8 +63,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9102C9531EC90118005E5283"
-            BuildableName = "MYJSON.framework"
+            BlueprintIdentifier = "4E6854021ECE3655002A7743"
+            BuildableName = "MYJSON-watchOS.framework"
             BlueprintName = "MYJSON-watchOS"
             ReferencedContainer = "container:MYJSON.xcodeproj">
          </BuildableReference>
