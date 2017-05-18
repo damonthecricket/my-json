@@ -6,24 +6,24 @@ xcode_project: MYJSON.xcodeproj
 
 branches:
   only:
-  	- master
+  - master
 
 env:
   global:
-  	- FRAMEWORK_NAME = MYJSON
-  	- USER_NAME = damonthecricket
-	- REPO_NAME = my-json
+  - FRAMEWORK_NAME = MYJSON
+  - USER_NAME = damonthecricket
+  - REPO_NAME = my-json
 
 before_install:
-	- rvm get head
-	- brew update
-	- brew outdated carthage || brew upgrade carthage
-	- gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+- rvm get head
+- brew update
+- brew outdated carthage || brew upgrade carthage
+- gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
 
 script:
-	- travis_retry xcodebuild -project MYJSON.xcodeproj/ -scheme "MYJSON-iOS" -destination "platform=iOS Simulator,name=iPhone 6,OS=10.0"
-	- travis_retry xcodebuild -project MYJSON.xcodeproj/ -scheme "MYJSON-macOS"
-	- travis_retry xcodebuild -project MYJSON.xcodeproj/ -scheme "MYJSON-tvOS" -destination "platform=tvOS Simulator,name=Apple TV 1080p"
-	- travis_retry xcodebuild -project MYJSON.xcodeproj/ -scheme "MYJSON-watchOS" -destination "platform=watchOS Simulator,name=Apple Watch Series 2 - 42mm"
-	- pod lib lint --quick
-	- carthage build --no-skip-current
+- travis_retry xcodebuild -project MYJSON.xcodeproj/ -scheme "MYJSON-iOS" -destination "platform=iOS Simulator,name=iPhone 6,OS=10.0"
+- travis_retry xcodebuild -project MYJSON.xcodeproj/ -scheme "MYJSON-macOS"
+- travis_retry xcodebuild -project MYJSON.xcodeproj/ -scheme "MYJSON-tvOS" -destination "platform=tvOS Simulator,name=Apple TV 1080p"
+- travis_retry xcodebuild -project MYJSON.xcodeproj/ -scheme "MYJSON-watchOS" -destination "platform=watchOS Simulator,name=Apple Watch Series 2 - 42mm"
+- pod lib lint --quick
+- carthage build --no-skip-current
