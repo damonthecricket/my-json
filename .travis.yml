@@ -15,7 +15,7 @@ env:
   - REPO_NAME = my-json
 
 script:
-- travis_retry xcodebuild -project $FRAMEWORK_NAME.xcodeproj -scheme "$FRAMEWORK_NAME iOS" -destination "platform=iOS Simulator,name=iPhone 6" build-for-testing test | xcpretty
-- travis_retry xcodebuild -project $FRAMEWORK_NAME.xcodeproj -scheme "$FRAMEWORK_NAME macOS" build-for-testing test | xcpretty
-- travis_retry xcodebuild -project $FRAMEWORK_NAME.xcodeproj -scheme "$FRAMEWORK_NAME tvOS" -destination "platform=tvOS Simulator,name=Apple TV 1080p" build-for-testing test | xcpretty
-- travis_retry xcodebuild -project $FRAMEWORK_NAME.xcodeproj -scheme "$FRAMEWORK_NAME watchOS" -destination "platform=watchOS Simulator,name=Apple Watch Series 2 - 42mm" build-for-testing test | xcpretty
+- travis_retry xcodebuild -xcodeproj MYJSON.xcodeproj -scheme "MYJSON iOS" -destination "platform=iOS Simulator,name=iPhone 6" build-for-testing test | xcpretty
+- travis_retry xcodebuild -xcodeproj MYJSON.xcodeproj -scheme "MYJSON macOS" build-for-testing test | xcpretty
+- travis_retry xcodebuild -xcodeproj MYJSON.xcodeproj -scheme "MYJSON tvOS" -destination "platform=tvOS Simulator,name=Apple TV 1080p" build-for-testing test | xcpretty
+- travis_retry xcodebuild -xcodeproj MYJSON.xcodeproj -scheme "MYJSON watchOS" -destination "platform=watchOS Simulator,name=Apple Watch Series 2 - 42mm" build-for-testing test | xcpretty
