@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E6854131ECE7A8C002A7743 /* MYJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 91044C361EBB9572009824AD /* MYJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E6854141ECE7A94002A7743 /* MYJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 91044C361EBB9572009824AD /* MYJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E6854151ECE7A9B002A7743 /* MYJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 91044C361EBB9572009824AD /* MYJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E6854161ECE7ACF002A7743 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D876E1ECB27A600B905B4 /* JSON.swift */; };
+		4E6854171ECE7ACF002A7743 /* JSONOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D87711ECB27A600B905B4 /* JSONOperators.swift */; };
+		4E6854181ECE7ACF002A7743 /* JSONDeserialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D87701ECB27A600B905B4 /* JSONDeserialization.swift */; };
+		4E6854191ECE7ACF002A7743 /* JSONSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D87721ECB27A600B905B4 /* JSONSerialization.swift */; };
+		4E68541A1ECE7ACF002A7743 /* JSON+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D876F1ECB27A600B905B4 /* JSON+Extensions.swift */; };
+		4E68541B1ECE7AE5002A7743 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D876E1ECB27A600B905B4 /* JSON.swift */; };
+		4E68541C1ECE7AE5002A7743 /* JSONOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D87711ECB27A600B905B4 /* JSONOperators.swift */; };
+		4E68541D1ECE7AE5002A7743 /* JSONDeserialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D87701ECB27A600B905B4 /* JSONDeserialization.swift */; };
+		4E68541E1ECE7AE5002A7743 /* JSONSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D87721ECB27A600B905B4 /* JSONSerialization.swift */; };
+		4E68541F1ECE7AE5002A7743 /* JSON+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D876F1ECB27A600B905B4 /* JSON+Extensions.swift */; };
+		4E6854201ECE7AF4002A7743 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D876E1ECB27A600B905B4 /* JSON.swift */; };
+		4E6854211ECE7AF4002A7743 /* JSONOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D87711ECB27A600B905B4 /* JSONOperators.swift */; };
+		4E6854221ECE7AF4002A7743 /* JSONDeserialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D87701ECB27A600B905B4 /* JSONDeserialization.swift */; };
+		4E6854231ECE7AF4002A7743 /* JSONSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D87721ECB27A600B905B4 /* JSONSerialization.swift */; };
+		4E6854241ECE7AF4002A7743 /* JSON+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D876F1ECB27A600B905B4 /* JSON+Extensions.swift */; };
 		91044C3D1EBB9572009824AD /* MYJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91044C331EBB9572009824AD /* MYJSON.framework */; };
 		91044C441EBB9572009824AD /* MYJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 91044C361EBB9572009824AD /* MYJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91044C661EBCCE21009824AD /* MYJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91044C651EBCCE21009824AD /* MYJSONTests.swift */; };
@@ -33,7 +51,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4E6853D51ECE3163002A7743 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4E6853E91ECE33B1002A7743 /* MYJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MYJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E6853F61ECE359A002A7743 /* MYJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MYJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E6854031ECE3655002A7743 /* MYJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MYJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,21 +115,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E6853D41ECE3162002A7743 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4E6853D51ECE3163002A7743 /* Foundation.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		91044C291EBB9572009824AD = {
 			isa = PBXGroup;
 			children = (
 				91044C351EBB9572009824AD /* MYJSON */,
 				91044C401EBB9572009824AD /* MYJSONTests */,
 				91044C341EBB9572009824AD /* Products */,
-				4E6853D41ECE3162002A7743 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,6 +190,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E6854141ECE7A94002A7743 /* MYJSON.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +198,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E6854151ECE7A9B002A7743 /* MYJSON.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +206,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E6854131ECE7A8C002A7743 /* MYJSON.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +409,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E68541B1ECE7AE5002A7743 /* JSON.swift in Sources */,
+				4E68541C1ECE7AE5002A7743 /* JSONOperators.swift in Sources */,
+				4E68541D1ECE7AE5002A7743 /* JSONDeserialization.swift in Sources */,
+				4E68541E1ECE7AE5002A7743 /* JSONSerialization.swift in Sources */,
+				4E68541F1ECE7AE5002A7743 /* JSON+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +421,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E6854201ECE7AF4002A7743 /* JSON.swift in Sources */,
+				4E6854211ECE7AF4002A7743 /* JSONOperators.swift in Sources */,
+				4E6854221ECE7AF4002A7743 /* JSONDeserialization.swift in Sources */,
+				4E6854231ECE7AF4002A7743 /* JSONSerialization.swift in Sources */,
+				4E6854241ECE7AF4002A7743 /* JSON+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +433,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E6854161ECE7ACF002A7743 /* JSON.swift in Sources */,
+				4E6854171ECE7ACF002A7743 /* JSONOperators.swift in Sources */,
+				4E6854181ECE7ACF002A7743 /* JSONDeserialization.swift in Sources */,
+				4E6854191ECE7ACF002A7743 /* JSONSerialization.swift in Sources */,
+				4E68541A1ECE7ACF002A7743 /* JSON+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,10 +446,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				919D87731ECB27A600B905B4 /* JSON.swift in Sources */,
-				919D87741ECB27A600B905B4 /* JSON+Extensions.swift in Sources */,
+				919D87761ECB27A600B905B4 /* JSONOperators.swift in Sources */,
 				919D87751ECB27A600B905B4 /* JSONDeserialization.swift in Sources */,
 				919D87771ECB27A600B905B4 /* JSONSerialization.swift in Sources */,
-				919D87761ECB27A600B905B4 /* JSONOperators.swift in Sources */,
+				919D87741ECB27A600B905B4 /* JSON+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +717,7 @@
 		91044C481EBB9572009824AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -703,7 +730,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.trenlab.MYJSON;
+				PRODUCT_BUNDLE_IDENTIFIER = com.damothecricket.MYJSON;
 				PRODUCT_NAME = MYJSON;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -715,6 +742,7 @@
 		91044C491EBB9572009824AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -727,7 +755,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.trenlab.MYJSON;
+				PRODUCT_BUNDLE_IDENTIFIER = com.damothecricket.MYJSON;
 				PRODUCT_NAME = MYJSON;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -775,6 +803,7 @@
 				4E6853F01ECE33B1002A7743 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E6853FB1ECE359A002A7743 /* Build configuration list for PBXNativeTarget "MYJSON-macOS" */ = {
 			isa = XCConfigurationList;
@@ -783,6 +812,7 @@
 				4E6853FD1ECE359A002A7743 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E6854081ECE3655002A7743 /* Build configuration list for PBXNativeTarget "MYJSON-watchOS" */ = {
 			isa = XCConfigurationList;
@@ -791,6 +821,7 @@
 				4E68540A1ECE3655002A7743 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		91044C2D1EBB9572009824AD /* Build configuration list for PBXProject "MYJSON" */ = {
 			isa = XCConfigurationList;
