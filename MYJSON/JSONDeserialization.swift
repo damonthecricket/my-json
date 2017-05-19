@@ -8,22 +8,6 @@
 
 import Foundation
 
-// MARK: - Precedencegroup
-
-precedencegroup DeserializingPrecedence {
-    
-    associativity: left
-    
-    higherThan: CastingPrecedence
-}
-
-// MARK: - Operators
-
-/**
- Ifix operator. Used for MYJSON deserialization.
- */
-infix operator <-: DeserializingPrecedence
-
 // MARK: - MYJSONDeserizlizable
 
 /** 
@@ -98,13 +82,13 @@ public func <- <T: MYJSONDeserizlizable>(lhs: T.Type, rhs: Any?) -> T? {
     switch right {
     case is MYJSON:
         let json: MYJSON = right as! MYJSON
-        model = lhs <- json
+        model = lhs.init(json: json)
     case is MYJSONType:
-        let json = (right as! MYJSONType)
-        model = lhs <- json
+        let json = MYJSON(rawValue: (right as! MYJSONType))
+        model = lhs.init(json: json)
     case is MYJSONArrayType:
         let json = MYJSON(rawValue: right)
-        model = lhs <- json
+        model = lhs.init(json: json)
     case is T:
         model = right as? T
     default:
@@ -144,24 +128,26 @@ public func <- <T: MYJSONDeserizlizable>(lhs: T.Type, rhs: Any?) -> [T] {
     case is MYJSON:
         switch (right as! MYJSON) {
         case .dictionary(let json):
-            let model = lhs <- json
+            let model = lhs.init(json: MYJSON(rawValue: json))
             models.append(model)
         case .array(let jsonArray):
-            let json = jsonArray
-            models = lhs <- json
+            models = jsonArray.map{json -> T in
+                return lhs.init(json: MYJSON(rawValue: json))
+            }
         }
     case is [MYJSON]:
         let jsonArray = right as! [MYJSON]
-        models = jsonArray.map{(json: MYJSON) -> T in
-            return lhs <- json
+        models = jsonArray.map{json-> T in
+            return lhs.init(json: json)
         }
     case is MYJSONType:
-        let json: MYJSONType = right as! MYJSONType
-        let model = lhs <- json
+        let model = lhs.init(json: MYJSON(rawValue: (right as! MYJSONType)))
         models.append(model)
     case is MYJSONArrayType:
         let jsonArray: MYJSONArrayType = right as! MYJSONArrayType
-        models = lhs <- jsonArray
+        models = jsonArray.map {json -> T in
+            return lhs.init(json: MYJSON(rawValue: json))
+        }
     case is T:
         models.append(right as! T)
     case is [T]:
@@ -197,13 +183,9 @@ public func <- <T: MYJSONDeserizlizable>(lhs: T.Type, rhs: MYJSON) -> T {
         - rhs: A value, which need to deserialize.
  */
 public func <- <T: MYJSONDeserizlizable>(lhs: T.Type, rhs: MYJSONArrayType) -> [T] {
-    var array: [T] = []
-    
-    for json in rhs {
-        let model: T = lhs <- json
-        array.append(model)
+    return rhs.map {json -> T in
+        return lhs.init(json: MYJSON(rawValue: json))
     }
-    return array
 }
 
 /**
