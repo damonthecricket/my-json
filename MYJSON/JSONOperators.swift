@@ -7,19 +7,3 @@
 //
 
 import Foundation
-
-// MARK: - Precedencegroup
-
-precedencegroup DeserializingPrecedence {
-    
-    associativity: left
-    
-    higherThan: CastingPrecedence
-}
-
-// MARK: - Operators
-
-/**
- Ifix operator. Used for MYJSON deserialization. 
- */
-infix operator <-: DeserializingPrecedence
