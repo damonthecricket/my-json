@@ -44,7 +44,7 @@ MYJSON is a simple Swift library to convert JSON to strongly typed objects.
 - #### [Carthage](https://github.com/Carthage/Carthage)
 
   ```
-  github "damonthecricket/MYJSON"
+  github "damonthecricket/my-json"
   ```
 
 - #### [Git](https://git-scm.com/)
