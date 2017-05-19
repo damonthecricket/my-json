@@ -4,7 +4,7 @@ language:  objective-c
 
 branches:
   only:
-  - master
+  - develop
 
 env:
   global:
