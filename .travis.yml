@@ -19,9 +19,9 @@ before_install:
 - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
 
 script:
-- travis_retry xcodebuild -project $FRAMEWORK_NAME.xcodeproj -target $FRAMEWORK_NAME-iOS 	 -destination "platform=iOS Simulator,name=iPhone 6,OS=10.0"
-- travis_retry xcodebuild -project $FRAMEWORK_NAME.xcodeproj -target $FRAMEWORK_NAME-macOS
-- travis_retry xcodebuild -project $FRAMEWORK_NAME.xcodeproj -target $FRAMEWORK_NAME-tvOS    -destination "platform=tvOS Simulator,name=Apple TV 1080p"
-- travis_retry xcodebuild -project $FRAMEWORK_NAME.xcodeproj -target $FRAMEWORK_NAME-watchOS -destination "platform=watchOS Simulator,name=Apple Watch Series 2 - 42mm"
+- travis_retry xcodebuild -project MYJSON.xcodeproj -target MYJSON-iOS 	   -destination "platform=iOS Simulator,name=iPhone 6,OS=10.0"
+- travis_retry xcodebuild -project MYJSON.xcodeproj -target MYJSON-macOS
+- travis_retry xcodebuild -project MYJSON.xcodeproj -target MYJSON-tvOS    -destination "platform=tvOS Simulator,name=Apple TV 1080p"
+- travis_retry xcodebuild -project MYJSON.xcodeproj -target MYJSON-watchOS -destination "platform=watchOS Simulator,name=Apple Watch Series 2 - 42mm"
 - pod lib lint --quick
 - carthage build --no-skip-current
