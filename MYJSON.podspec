@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
   spec.authors = { 
     "Damon Cricket" => 'damon.the.cricket@gmail.com' 
   }
-  spec.social_media_url = "https://www.facebook.com/damonthecricketprograms/"
+  spec.social_media_url = "https://www.facebook.com/damonthecricket/"
 
   spec.osx.deployment_target = "10.9"
   spec.ios.deployment_target = "8.0"
